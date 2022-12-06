@@ -1,0 +1,21 @@
+ATI Sensor development
+======================
+
+It's wired, when I first run the SOEM as root user. I can observe the topic on the narmal user terminal, just cannot read the data on this topic.
+
+And when I tried to set the environment by :
+
+.. code-block:: console
+    
+    export FAST = xxx
+
+It is work!
+
+BUT! When I try it agian just several hours later, it doesn't work! 
+And the scence is so wired that I even cannot see the topic and node if any nodes run on the root.
+
+How to solve it?
+
+.. note:: 
+    Maybe I can try to reset the UDP transmission.
+
