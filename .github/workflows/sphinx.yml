@@ -6,13 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: install furo
-      run: pip install furo
     - uses: actions/checkout@v3
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "./"
+        pre-build-command: "pip install -r requirements.txt"
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
