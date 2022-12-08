@@ -9,7 +9,7 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here.
 
-project = 'Development Logs'
+project = 'Dayuan Logs'
 copyright = '2022, Dayuan Chen'
 author = 'Dayuan Chen'
 release = '0.1'
