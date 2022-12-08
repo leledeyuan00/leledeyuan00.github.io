@@ -17,9 +17,19 @@ jobs:
       with:
         name: html-docs
         path: ./build/html/
+    # - name: Deploy
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   if: github.ref == 'refs/heads/main'
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./build/html
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/html
+        cname: docs.example.com
+        keep_files: true
+        user_name: Dayuan
+        user_email: 373556662@qq.com
