@@ -14,3 +14,12 @@ LOGs
    :maxdepth: 2
 
    2022_12/index
+
+
+Notes
+--------
+
+.. toctree:: 
+   :maxdepth: 2
+
+   notes/index

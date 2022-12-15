@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ATI Sensor development" href="ATI_sensor.html" /><link rel="prev" title="Dayuan Research Logs!" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="ROS2 realtime pub and sub" href="real_time_pub_sub.html" /><link rel="prev" title="These are some notes" href="index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>Logs in 2022-12 - Dayuan Logs 0.1 documentation</title>
+        <title>How to get the robot_description parameter well? - Dayuan Logs 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -153,17 +153,17 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Logs in 2022-12</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ATI_sensor.html">ATI Sensor development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Trajectory_controller.html">Denso Robot Trajectory Controller Development</a></li>
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022_12/index.html">Logs in 2022-12</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022_12/ATI_sensor.html">ATI Sensor development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022_12/Trajectory_controller.html">Denso Robot Trajectory Controller Development</a></li>
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notes/index.html">These are some notes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notes/robot_description.html">How to get the robot_description parameter well?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">These are some notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">How to get the robot_description parameter well?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 </ul>
 </li>
 </ul>
@@ -200,32 +200,35 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="logs-in-2022-12">
-<h1>Logs in 2022-12<a class="headerlink" href="#logs-in-2022-12" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ATI_sensor.html">ATI Sensor development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ATI_sensor.html#docker">Docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ATI_sensor.html#solved">Solved!</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ATI_sensor.html#next-todo">Next TODO</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Trajectory_controller.html">Denso Robot Trajectory Controller Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Trajectory_controller.html#virtual-forward-dynamics">Virtual Forward Dynamics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Trajectory_controller.html#first-problem">First Problem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Trajectory_controller.html#second-problem">Second Problem</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="Trajectory_controller.html#admittance-controller-in-ros2-controllers">Admittance Controller in ROS2 controllers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Trajectory_controller.html#realtime-command">Realtime command</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="Trajectory_controller.html#todo">TODO:</a></li>
-</ul>
-</li>
-</ul>
+          <div class="section" id="how-to-get-the-robot-description-parameter-well">
+<span id="robot-rescription-parameter"></span><h1>How to get the robot_description parameter well?<a class="headerlink" href="#how-to-get-the-robot-description-parameter-well" title="Permalink to this heading">#</a></h1>
+<p>Because in the ROS2, the parameters cannot share with each Node in generally.</p>
+<p>But in generally, there would be used in the /robot_state_publisher node.</p>
+<p>So we can try to get that paremeter from this Node.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="o">::</span><span class="nn">chrono_literals</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">m_robot_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_parameter</span><span class="p">(</span><span class="s">&quot;robot_description&quot;</span><span class="p">).</span><span class="n">as_string</span><span class="p">();</span><span class="w"></span>
+<span class="n">rclcpp</span><span class="o">::</span><span class="n">SyncParametersClient</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">urdf_param_client</span><span class="p">;</span><span class="w"></span>
+<span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">parameter_node</span><span class="p">;</span><span class="w"></span>
+<span class="n">parameter_node</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="p">(</span><span class="s">&quot;parameter_node&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="n">urdf_param_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SyncParametersClient</span><span class="o">&gt;</span><span class="p">(</span><span class="n">parameter_node</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/robot_state_publisher&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Waiting for global parameter server...&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">urdf_param_client</span><span class="o">-&gt;</span><span class="n">wait_for_service</span><span class="p">(</span><span class="mi">5</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Global parameter server not found&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">urdf_param_client</span><span class="o">-&gt;</span><span class="n">get_parameters</span><span class="p">({</span><span class="s">&quot;robot_description&quot;</span><span class="p">});</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">m_robot_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">value_to_string</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_robot_description</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RCLCPP_ERROR</span><span class="p">(</span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;robot_description is empty&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">node_interfaces</span><span class="o">::</span><span class="n">LifecycleNodeInterface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Robot URDF Found!&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
 </div>
 </div>
 
@@ -234,23 +237,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="ATI_sensor.html">
+          <a class="next-page" href="real_time_pub_sub.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">ATI Sensor development</div>
+                <div class="title">ROS2 realtime pub and sub</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../index.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">These are some notes</div>
                 
               </div>
             </a>

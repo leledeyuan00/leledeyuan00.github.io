@@ -160,6 +160,13 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notes/index.html">These are some notes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notes/robot_description.html">How to get the robot_description parameter well?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -247,9 +254,8 @@ Because it runs depending the Virtual Machine. Not suitable with Linux.
 And you can’t use the –net=host. It’s a bug of the Docker Desktop.</p>
 <p>Install the Docker Engine to instead of.</p>
 </div>
-</div>
 <div class="section" id="solved">
-<h2>Solved!<a class="headerlink" href="#solved" title="Permalink to this heading">#</a></h2>
+<h3>Solved!<a class="headerlink" href="#solved" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Using the Docker Engine</p></li>
 <li><p>Using the –net=host</p></li>
@@ -257,9 +263,14 @@ And you can’t use the –net=host. It’s a bug of the Docker Desktop.</p>
 <li><p>Done!</p></li>
 </ol>
 </div>
+</div>
 <div class="section" id="next-todo">
 <h2>Next TODO<a class="headerlink" href="#next-todo" title="Permalink to this heading">#</a></h2>
-<p>Try to solve the problem of red blink…</p>
+<ol class="arabic simple">
+<li><p>Try to solve the problem of red blink…</p></li>
+<li><p>Try to add ati model in xcaros.</p></li>
+<li><p>Try to wrapper it as a ROS hardware interface, then use it in the ros2_control.</p></li>
+</ol>
 </div>
 </div>
 
@@ -319,8 +330,10 @@ And you can’t use the –net=host. It’s a bug of the Docker Desktop.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">ATI Sensor development</a><ul>
-<li><a class="reference internal" href="#docker">Docker</a></li>
+<li><a class="reference internal" href="#docker">Docker</a><ul>
 <li><a class="reference internal" href="#solved">Solved!</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#next-todo">Next TODO</a></li>
 </ul>
 </li>

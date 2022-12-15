@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="ATI Sensor development" href="ATI_sensor.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="These are some notes" href="../notes/index.html" /><link rel="prev" title="ATI Sensor development" href="ATI_sensor.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Denso Robot Trajectory Controller Development - Dayuan Logs 0.1 documentation</title>
@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -157,6 +157,13 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Logs in 2022-12</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ATI_sensor.html">ATI Sensor development</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Denso Robot Trajectory Controller Development</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notes/index.html">These are some notes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notes/robot_description.html">How to get the robot_description parameter well?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 </ul>
 </li>
 </ul>
@@ -187,7 +194,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -195,6 +202,46 @@
         <article role="main">
           <div class="section" id="denso-robot-trajectory-controller-development">
 <h1>Denso Robot Trajectory Controller Development<a class="headerlink" href="#denso-robot-trajectory-controller-development" title="Permalink to this heading">#</a></h1>
+<div class="section" id="virtual-forward-dynamics">
+<h2>Virtual Forward Dynamics<a class="headerlink" href="#virtual-forward-dynamics" title="Permalink to this heading">#</a></h2>
+<p>First of all, I decide to use a virtual forward dynamics for resolve inverse kinematics probelm.</p>
+<p>By the <a class="reference external" href="https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers">stefanscherzinger</a></p>
+<div class="section" id="first-problem">
+<h3>First Problem<a class="headerlink" href="#first-problem" title="Permalink to this heading">#</a></h3>
+<p>The first problem when I used this package is that it cannot find the parameter well.
+Such as: <em>robot_description</em>, and other controller needed parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For robot_description, a <strong>Parameter Client</strong> can be used to solve this problem. <a class="reference internal" href="../notes/robot_description.html#robot-rescription-parameter"><span class="std std-ref">Robot Rescription Parameter</span></a></p>
+</div>
+</div>
+<div class="section" id="second-problem">
+<h3>Second Problem<a class="headerlink" href="#second-problem" title="Permalink to this heading">#</a></h3>
+<p>The other parameter also cannot be found.</p>
+<p>Does the parameter not be load correctly in this controller?</p>
+</div>
+</div>
+<div class="section" id="admittance-controller-in-ros2-controllers">
+<h2>Admittance Controller in ROS2 controllers<a class="headerlink" href="#admittance-controller-in-ros2-controllers" title="Permalink to this heading">#</a></h2>
+<p>There is an official admittance controller in ROS2 controllers.
+Maybe I can use this controller first to fammiliar with the ros2 controller.
+Then write a customized controller by myself.</p>
+<p>There are some function in this controller that seems interesting.</p>
+<div class="section" id="realtime-command">
+<h3>Realtime command<a class="headerlink" href="#realtime-command" title="Permalink to this heading">#</a></h3>
+<p>It declares a subscriber to update the realtime command variable. And use this variable in the update function.
+It will ganranttee the command is generated in a certain loop rate and don’t depend on the user send frequency.</p>
+<p><a class="reference internal" href="../notes/real_time_pub_sub.html#realtime-pub-sub"><span class="std std-ref">Realtime pub and sub in ROS2 by C++</span></a></p>
+</div>
+</div>
+<div class="section" id="todo">
+<h2>TODO:<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Try to use the admittance controller in ROS2 controllers.</p></li>
+<li><p>Try to use the virtual forward dynamics controller.</p></li>
+<li><p>Try to customize a controller by myself.</p></li>
+</ol>
+</div>
 </div>
 
         </article>
@@ -202,7 +249,15 @@
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../notes/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">These are some notes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="ATI_sensor.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -232,8 +287,36 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Denso Robot Trajectory Controller Development</a><ul>
+<li><a class="reference internal" href="#virtual-forward-dynamics">Virtual Forward Dynamics</a><ul>
+<li><a class="reference internal" href="#first-problem">First Problem</a></li>
+<li><a class="reference internal" href="#second-problem">Second Problem</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#admittance-controller-in-ros2-controllers">Admittance Controller in ROS2 controllers</a><ul>
+<li><a class="reference internal" href="#realtime-command">Realtime command</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#todo">TODO:</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
