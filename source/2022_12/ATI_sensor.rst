@@ -62,7 +62,7 @@ Maybe I should reinstall the ROS2. It's out of my knoledge area....
     Install the Docker Engine to instead of.
 
 Solved!
--------
+*******
 
 1. Using the Docker Engine
 2. Using the --net=host
@@ -72,4 +72,6 @@ Solved!
 Next TODO
 ---------
 
-Try to solve the problem of red blink...
+1. Try to solve the problem of red blink...
+2. Try to add ati model in xcaros.
+3. Try to wrapper it as a ROS hardware interface, then use it in the ros2_control.
