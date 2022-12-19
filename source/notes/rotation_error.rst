@@ -1,7 +1,7 @@
 Rotation Error Computing
 ========================
 
-Referenced by `Cartesian Controller <https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers/blob/ros2/cartesian_motion_controller/src/cartesian_motion_controller.cpp#L152>`_
+Referenced by `Stefan's Cartesian Controller <https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers/blob/ros2/cartesian_motion_controller/src/cartesian_motion_controller.cpp#L152>`_
 
 There is a good way to compute the rotation error, that I never knew before.
 
