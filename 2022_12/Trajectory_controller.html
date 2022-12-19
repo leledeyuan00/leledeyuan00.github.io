@@ -217,7 +217,7 @@ Such as: <em>robot_description</em>, and other controller needed parameters.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is for uncontroller package. If the ROS controller is used here, the parameter can be loaded directly in the controller spawn node which usually combained with the urdf file loaded.</p>
+<p>This is for uncontroller package. If the ROS controller is used here, the parameter can be loaded directly in the controller spawn node which usually combined with the urdf file loaded.</p>
 </div>
 </div>
 <div class="section" id="second-problem">
@@ -241,6 +241,29 @@ Then write a customized controller by myself.</p>
 <p>It declares a subscriber to update the realtime command variable. And use this variable in the update function.
 It will ganranttee the performace of the command generated in a certain loop rate and not depend on the user send frequency.</p>
 <p><a class="reference internal" href="../notes/real_time_pub_sub.html#realtime-pub-sub"><span class="std std-ref">Realtime pub and sub in ROS2 by C++</span></a></p>
+</div>
+</div>
+<div class="section" id="custom-controller">
+<h2>Custom Controller<a class="headerlink" href="#custom-controller" title="Permalink to this heading">#</a></h2>
+<p>Do I need to write a customized controller?</p>
+<p>The current controller in ROS2 controllers cannot work well.
+In Stefan’s package, the impedance parameter is setted by ROS2 parameter system. It is not a good way to set the parameter.</p>
+<ol class="arabic simple">
+<li><p>Maybe service is a better way to set the parameter.</p></li>
+<li><p>And maybe I also will try to combine the Moveit2 Servoing with this controller.</p></li>
+<li><p>And I think it is a good chance to learn how to write a controller in ROS2.</p></li>
+<li><p>I need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Professor asked a question today(2022.12.19): why impedance controller does not need too high frequency?</p>
+<dl class="simple">
+<dt>How to answer this question?</dt><dd><ol class="arabic simple">
+<li><p>The impedance controller is a kind of feedback controller in the position control interface. It will not change the system state, just make the motion near the current state. So it does not need too high frequency.</p></li>
+<li><p>The velocity control and force control is the iner loop of the impedance controller. It is executed into the robotic controller itself. It is already a high frequency control and it don’t need be considered by us.</p></li>
+</ol>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="todo">
@@ -325,6 +348,7 @@ It will ganranttee the performace of the command generated in a certain loop rat
 <li><a class="reference internal" href="#realtime-command">Realtime command</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#custom-controller">Custom Controller</a></li>
 <li><a class="reference internal" href="#todo">TODO:</a></li>
 </ul>
 </li>

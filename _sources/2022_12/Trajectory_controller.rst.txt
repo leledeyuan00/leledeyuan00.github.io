@@ -17,7 +17,7 @@ Such as: *robot_description*, and other controller needed parameters.
     For robot_description, a **Parameter Client** can be used to solve this problem. :ref:`Robot Rescription Parameter <Robot Rescription Parameter>`
 
 .. note:: 
-    This is for uncontroller package. If the ROS controller is used here, the parameter can be loaded directly in the controller spawn node which usually combained with the urdf file loaded.
+    This is for uncontroller package. If the ROS controller is used here, the parameter can be loaded directly in the controller spawn node which usually combined with the urdf file loaded.
 
 Second Problem
 ^^^^^^^^^^^^^^
@@ -50,6 +50,27 @@ It will ganranttee the performace of the command generated in a certain loop rat
 
 :ref:`Realtime pub and sub in ROS2 by C++ <Realtime Pub Sub>`
 
+
+Custom Controller
+-----------------
+
+Do I need to write a customized controller?
+
+The current controller in ROS2 controllers cannot work well. 
+In Stefan's package, the impedance parameter is setted by ROS2 parameter system. It is not a good way to set the parameter.
+
+1. Maybe service is a better way to set the parameter.
+2. And maybe I also will try to combine the Moveit2 Servoing with this controller.
+3. And I think it is a good chance to learn how to write a controller in ROS2.
+4. I need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.
+
+.. note:: 
+
+    Professor asked a question today(2022.12.19): why impedance controller does not need too high frequency?
+    
+    How to answer this question?
+        1. The impedance controller is a kind of feedback controller in the position control interface. It will not change the system state, just make the motion near the current state. So it does not need too high frequency.
+        2. The velocity control and force control is the iner loop of the impedance controller. It is executed into the robotic controller itself. It is already a high frequency control and it don't need be considered by us.
 
 TODO:
 -----
