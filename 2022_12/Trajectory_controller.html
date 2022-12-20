@@ -256,6 +256,10 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <li><p>I also need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.</p></li>
 <li><p>Another problem, there is no joint control in the motion controller. It is not flexible.</p></li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>No collision detection, if I wrote a controller by myself. This is an important problem.</p>
+</div>
 <p>So I should ensure what should be done in the controller.</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -267,6 +271,8 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <li><p>Design joint control interface.</p></li>
 </ol>
 </div></blockquote>
+<p>Maybe I can combine the Moveit2 servoing with a customized kinematics solver and its collision detection. Finnally use the trajectory_controller.</p>
+<p>Because in the real environment, it is important to ensure robot safe in large workspace, such as go home or go to some work states.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Professor asked a question today(2022.12.19): why impedance controller does not need too high frequency?</p>
@@ -278,6 +284,17 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 </dd>
 </dl>
 </div>
+</div>
+<div class="section" id="custom-ik-solver">
+<h2>Custom IK Solver<a class="headerlink" href="#custom-ik-solver" title="Permalink to this heading">#</a></h2>
+<p>The moveit2 servoing is based on the IK solver from moveit2. So I can write a custome IK solver to combine it.</p>
+<p>Progress:</p>
+<ol class="arabic simple">
+<li><p>Find how to get the H matrix in Stefan’s package.</p></li>
+<li><p>Config the moveit2. And try to use the moveit2 in the Gazebo.</p></li>
+<li><p>Config the moveit2 servoing.</p></li>
+<li><p>Develop the custom IK solver.</p></li>
+</ol>
 </div>
 <div class="section" id="todo">
 <h2>TODO:<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
@@ -362,6 +379,7 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 </ul>
 </li>
 <li><a class="reference internal" href="#custom-controller">Custom Controller</a></li>
+<li><a class="reference internal" href="#custom-ik-solver">Custom IK Solver</a></li>
 <li><a class="reference internal" href="#todo">TODO:</a></li>
 </ul>
 </li>
