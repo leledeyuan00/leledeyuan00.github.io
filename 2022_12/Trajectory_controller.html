@@ -165,6 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../notes/robot_description.html">How to get the robot_description parameter well?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/rotation_error.html">Rotation Error Computing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes/kinematics_interface.html">Kinematics Interface – ROS2 controller plugin</a></li>
 </ul>
 </li>
 </ul>
@@ -252,8 +253,20 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <li><p>Maybe service is a better way to set the parameter.</p></li>
 <li><p>And maybe I also will try to combine the Moveit2 Servoing with this controller.</p></li>
 <li><p>And I think it is a good chance to learn how to write a controller in ROS2.</p></li>
-<li><p>I need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.</p></li>
+<li><p>I also need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.</p></li>
+<li><p>Another problem, there is no joint control in the motion controller. It is not flexible.</p></li>
 </ol>
+<p>So I should ensure what should be done in the controller.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The basic cartesian controller should be developed.</p></li>
+<li><p>Add the impedance control in the controller. And it also canbe selected by setting the parameter.</p></li>
+<li><p>The parameter of the impedance control should be setted by service in anytime.</p></li>
+<li><p>The velocity limitaion should be added in the controller, and it also can be setted by parameter.</p></li>
+<li><p>Try to combine the Moveit2 servoing.</p></li>
+<li><p>Design joint control interface.</p></li>
+</ol>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Professor asked a question today(2022.12.19): why impedance controller does not need too high frequency?</p>

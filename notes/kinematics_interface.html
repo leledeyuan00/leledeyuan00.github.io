@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to get the robot_description parameter well?" href="robot_description.html" /><link rel="prev" title="Denso Robot Trajectory Controller Development" href="../2022_12/Trajectory_controller.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Rotation Error Computing" href="rotation_error.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>Some notes - Dayuan Logs 0.1 documentation</title>
+        <title>Kinematics Interface – ROS2 controller plugin - Dayuan Logs 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -161,11 +161,11 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Some notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Some notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="robot_description.html">How to get the robot_description parameter well?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rotation_error.html">Rotation Error Computing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kinematics_interface.html">Kinematics Interface – ROS2 controller plugin</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Kinematics Interface – ROS2 controller plugin</a></li>
 </ul>
 </li>
 </ul>
@@ -202,16 +202,21 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="some-notes">
-<h1>Some notes<a class="headerlink" href="#some-notes" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="robot_description.html">How to get the robot_description parameter well?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rotation_error.html">Rotation Error Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kinematics_interface.html">Kinematics Interface – ROS2 controller plugin</a></li>
-</ul>
+          <div class="section" id="kinematics-interface-ros2-controller-plugin">
+<h1>Kinematics Interface – ROS2 controller plugin<a class="headerlink" href="#kinematics-interface-ros2-controller-plugin" title="Permalink to this heading">#</a></h1>
+<p>This package provides a ROS2 controller plugin for kinematics interface.</p>
+<p>It packages the KDL kinematics library as a ROS2 controller plugin.</p>
+<p>In this plugin, the cartesian space to joint space is calculated by Damped Least Squares(DLS) method to avoid the singularity.</p>
+<p>The equation of the DLS is:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[q = (J^T * J + \lambda^2 * I)^{-1} * J^T * (x_{desired} - x_{current})\]</div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>where J is the Jacobian matrix, lambda is the damping factor, I is the identity matrix, and x is the position and orientation of the end-effector.</p>
+</div>
+<p>This plugin can be used as referenced by <a class="reference external" href="https://github.com/ros-controls/kinematics_interface/blob/master/kinematics_interface_kdl/test/test_kinematics_interface_kdl.cpp#L32">Kinematics Interface Github</a></p>
 </div>
 
         </article>
@@ -219,23 +224,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="robot_description.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">How to get the robot_description parameter well?</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../2022_12/Trajectory_controller.html">
+          
+          <a class="prev-page" href="rotation_error.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Denso Robot Trajectory Controller Development</div>
+                <div class="title">Rotation Error Computing</div>
                 
               </div>
             </a>
@@ -270,5 +267,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

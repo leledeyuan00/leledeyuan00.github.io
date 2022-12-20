@@ -62,7 +62,17 @@ In Stefan's package, the impedance parameter is setted by ROS2 parameter system.
 1. Maybe service is a better way to set the parameter.
 2. And maybe I also will try to combine the Moveit2 Servoing with this controller.
 3. And I think it is a good chance to learn how to write a controller in ROS2.
-4. I need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.
+4. I also need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.
+5. Another problem, there is no joint control in the motion controller. It is not flexible.
+
+So I should ensure what should be done in the controller.
+
+    1. The basic cartesian controller should be developed.
+    2. Add the impedance control in the controller. And it also canbe selected by setting the parameter.
+    3. The parameter of the impedance control should be setted by service in anytime.
+    4. The velocity limitaion should be added in the controller, and it also can be setted by parameter.
+    5. Try to combine the Moveit2 servoing.
+    6. Design joint control interface.
 
 .. note:: 
 
