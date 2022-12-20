@@ -64,6 +64,10 @@ In Stefan's package, the impedance parameter is setted by ROS2 parameter system.
 3. And I think it is a good chance to learn how to write a controller in ROS2.
 4. I also need to add some velocity limitaion in the controller. Both the cartesian velocity and joint velocity.
 5. Another problem, there is no joint control in the motion controller. It is not flexible.
+   
+.. warning:: 
+
+   No collision detection, if I wrote a controller by myself. This is an important problem.
 
 So I should ensure what should be done in the controller.
 
@@ -74,6 +78,10 @@ So I should ensure what should be done in the controller.
     5. Try to combine the Moveit2 servoing.
     6. Design joint control interface.
 
+Maybe I can combine the Moveit2 servoing with a customized kinematics solver and its collision detection. Finnally use the trajectory_controller.
+
+Because in the real environment, it is important to ensure robot safe in large workspace, such as go home or go to some work states.
+
 .. note:: 
 
     Professor asked a question today(2022.12.19): why impedance controller does not need too high frequency?
@@ -81,6 +89,18 @@ So I should ensure what should be done in the controller.
     How to answer this question?
         1. The impedance controller is a kind of feedback controller in the position control interface. It will not change the system state, just make the motion near the current state. So it does not need too high frequency.
         2. The velocity control and force control is the iner loop of the impedance controller. It is executed into the robotic controller itself. It is already a high frequency control and it don't need be considered by us.
+
+
+Custom IK Solver
+----------------
+The moveit2 servoing is based on the IK solver from moveit2. So I can write a custome IK solver to combine it.
+
+Progress:
+
+1. Find how to get the H matrix in Stefan's package.
+2. Config the moveit2. And try to use the moveit2 in the Gazebo.
+3. Config the moveit2 servoing.
+4. Develop the custom IK solver.
 
 TODO:
 -----
