@@ -206,7 +206,7 @@
 <h1>Denso Robot Trajectory Controller Development<a class="headerlink" href="#denso-robot-trajectory-controller-development" title="Permalink to this heading">#</a></h1>
 <div class="section" id="virtual-forward-dynamics">
 <h2>Virtual Forward Dynamics<a class="headerlink" href="#virtual-forward-dynamics" title="Permalink to this heading">#</a></h2>
-<p>First of all, I decide to use a virtual forward dynamics for resolve inverse kinematics probelm.</p>
+<p>First of all, I decide to use a virtual forward dynamics for solve inverse kinematics probelm.</p>
 <p>By the <a class="reference external" href="https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers">stefanscherzinger</a></p>
 <div class="section" id="first-problem">
 <h3>First Problem<a class="headerlink" href="#first-problem" title="Permalink to this heading">#</a></h3>
@@ -289,9 +289,11 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <h2>Custom IK Solver<a class="headerlink" href="#custom-ik-solver" title="Permalink to this heading">#</a></h2>
 <p>The moveit2 servoing is based on the IK solver from moveit2. So I can write a custome IK solver to combine it.</p>
 <p>Progress:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Find how to get the H matrix in Stefan’s package.</p></li>
-<li><p>Config the moveit2. And try to use the moveit2 in the Gazebo.</p></li>
+<li><p>Config the moveit2. And try to use the moveit2 in the Gazebo.</p>
+<p>It is referenced by <cite>UR moveit config&lt;https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/main/ur_moveit_config&gt;</cite></p>
+</li>
 <li><p>Config the moveit2 servoing.</p></li>
 <li><p>Develop the custom IK solver.</p></li>
 </ol>
