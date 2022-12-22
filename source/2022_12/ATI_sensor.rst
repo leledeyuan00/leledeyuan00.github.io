@@ -52,7 +52,7 @@ The code is:
 
 But I can't!
 
-Maybe I should reinstall the ROS2. It's out of my knoledge area....
+Maybe I should reinstall the ROS2. It's out of my knowledge area....
 
 .. warning:: 
     Don't install Docker Desktop! You can't find the docker0 interface in the host. 
