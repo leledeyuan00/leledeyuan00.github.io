@@ -3,7 +3,7 @@ Denso Robot Trajectory Controller Development
 
 Virtual Forward Dynamics
 ------------------------
-First of all, I decide to use a virtual forward dynamics for resolve inverse kinematics probelm.
+First of all, I decide to use a virtual forward dynamics for solve inverse kinematics probelm.
 
 By the `stefanscherzinger <https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers>`_
 
@@ -99,6 +99,9 @@ Progress:
 
 1. Find how to get the H matrix in Stefan's package.
 2. Config the moveit2. And try to use the moveit2 in the Gazebo.
+   
+   It is referenced by `UR moveit config<https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/main/ur_moveit_config>`
+   
 3. Config the moveit2 servoing.
 4. Develop the custom IK solver.
 
