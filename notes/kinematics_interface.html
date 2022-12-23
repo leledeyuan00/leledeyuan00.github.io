@@ -298,6 +298,11 @@
 </div>
 </div>
 </div>
+<div class="section" id="singularity-handle-in-moveit2-servoing">
+<h2>Singularity Handle in Moveit2 Servoing<a class="headerlink" href="#singularity-handle-in-moveit2-servoing" title="Permalink to this heading">#</a></h2>
+<p>In moveit2 servoing, the singularity handle is realized by the SVD first. Then using the last column of U from  SVD of the Jacobian points directly toward or away from the singualrity.</p>
+<p>Reference by : <a class="reference external" href="https://github.com/ros-planning/moveit2/blob/humble/moveit_ros/moveit_servo/src/servo_calcs.cpp#L845">Singularity Handle Github</a></p>
+</div>
 </div>
 
         </article>
@@ -354,6 +359,7 @@
 <li><a class="reference internal" href="#stefan-s-method-realized-by-kdl">Stefan’s method realized by KDL</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#singularity-handle-in-moveit2-servoing">Singularity Handle in Moveit2 Servoing</a></li>
 </ul>
 </li>
 </ul>
