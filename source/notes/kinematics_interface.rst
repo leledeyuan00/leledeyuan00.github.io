@@ -106,3 +106,9 @@ The code can be used as follow:
         return control_cmd;
     }
 
+Singularity Handle in Moveit2 Servoing
+--------------------------------------
+
+In moveit2 servoing, the singularity handle is realized by the SVD first. Then using the last column of U from  SVD of the Jacobian points directly toward or away from the singualrity.
+
+Reference by : `Singularity Handle Github <https://github.com/ros-planning/moveit2/blob/humble/moveit_ros/moveit_servo/src/servo_calcs.cpp#L845>`_
