@@ -103,7 +103,27 @@ Progress:
    It is referenced by `UR moveit config <https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/main/ur_moveit_config>`_
    
 3. Config the moveit2 servoing.
+   
+   Servoing works! The main problem is that the header.stamp should be setted as the current ros time; So publisher cli dosen't work here.
+
 4. Develop the custom IK solver.
+   
+   Try to develop the custom IK solver, try to reference the official IK solver in moveit2. 
+
+   .. note:: 
+
+        In servoing, the kinematics config xml should as a parameter in the servoing node. Then the kinematics solver can be loaded in the servoing node.
+
+    - Add the Stefan's inverse kinematics
+    - Add the Impedance Controller in this IK solver
+
+The problem of the IK solver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+It is a solver, not run in the realtime loop. So it is not suitable for the compliant control if used directly. 
+I can design a custom servoing node to use this IK solver. And the servoing node can be used in the realtime loop.
+
+There is a pose tracking funciton in the servo. Maybe I can try to use it.
 
 TODO:
 -----

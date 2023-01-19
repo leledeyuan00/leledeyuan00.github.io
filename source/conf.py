@@ -12,7 +12,7 @@
 project = 'Dayuan Logs'
 copyright = '2022, Dayuan Chen'
 author = 'Dayuan Chen'
-release = '0.1'
+release = ''
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
