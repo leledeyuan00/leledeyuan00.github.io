@@ -125,6 +125,18 @@ I can design a custom servoing node to use this IK solver. And the servoing node
 
 There is a pose tracking funciton in the servo. Maybe I can try to use it.
 
+Custom Pose Tracking package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, I used a customized pose tracking package referenced with the official pose tracking package in moveit2. Wrote the impedance controller in the pose trakcing.
+In the pose tracking, PID controller is used to reach target. 
+
+And the tracking package is used servoing class to generate the command. So that it can realize the collision avoidance.
+
+In the real experiment, the trajectory_controller has some problem, I don't know why, it likes I write the custom trajectory message before to control the simulated UR. 
+I thought it is my fault before, it seems that the problem has another reason. Currently, I use a script to switch the follow joint controller and trajectory controller to use moveit plan and servoing.
+
+
 TODO:
 -----
 

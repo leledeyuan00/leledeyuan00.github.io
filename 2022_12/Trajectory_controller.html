@@ -162,6 +162,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../2023_01/index.html">Logs in 2023-01</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2023_01/Vision.html">Robot Vision for Garment Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023_01/RealRobotCompliant.html">Real Robot Compliant Experiment</a></li>
 </ul>
 </li>
 </ul>
@@ -322,6 +323,14 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 I can design a custom servoing node to use this IK solver. And the servoing node can be used in the realtime loop.</p>
 <p>There is a pose tracking funciton in the servo. Maybe I can try to use it.</p>
 </section>
+<section id="custom-pose-tracking-package">
+<h3>Custom Pose Tracking package<a class="headerlink" href="#custom-pose-tracking-package" title="Permalink to this heading">#</a></h3>
+<p>Finally, I used a customized pose tracking package referenced with the official pose tracking package in moveit2. Wrote the impedance controller in the pose trakcing.
+In the pose tracking, PID controller is used to reach target.</p>
+<p>And the tracking package is used servoing class to generate the command. So that it can realize the collision avoidance.</p>
+<p>In the real experiment, the trajectory_controller has some problem, I don’t know why, it likes I write the custom trajectory message before to control the simulated UR.
+I thought it is my fault before, it seems that the problem has another reason. Currently, I use a script to switch the follow joint controller and trajectory controller to use moveit plan and servoing.</p>
+</section>
 </section>
 <section id="todo">
 <h2>TODO:<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
@@ -408,6 +417,7 @@ I can design a custom servoing node to use this IK solver. And the servoing node
 <li><a class="reference internal" href="#custom-controller">Custom Controller</a></li>
 <li><a class="reference internal" href="#custom-ik-solver">Custom IK Solver</a><ul>
 <li><a class="reference internal" href="#the-problem-of-the-ik-solver">The problem of the IK solver</a></li>
+<li><a class="reference internal" href="#custom-pose-tracking-package">Custom Pose Tracking package</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#todo">TODO:</a></li>
