@@ -2,10 +2,11 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Some notes" href="../notes/index.html" /><link rel="prev" title="ATI Sensor development" href="ATI_sensor.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Logs in 2023-01" href="../2023_01/index.html" /><link rel="prev" title="ATI Sensor development" href="ATI_sensor.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>Denso Robot Trajectory Controller Development - Dayuan Logs 0.1 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
+        <title>Denso Robot Trajectory Controller Development - Dayuan Logs documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -122,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Dayuan Logs 0.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Dayuan Logs  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Dayuan Logs 0.1 documentation</span>
+  <span class="sidebar-brand-text">Dayuan Logs  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -159,9 +160,13 @@
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Denso Robot Trajectory Controller Development</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023_01/index.html">Logs in 2023-01</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023_01/Vision.html">Robot Vision for Garment Manipulation</a></li>
+</ul>
+</li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notes/index.html">Some notes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notes/index.html">Some notes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notes/robot_description.html">How to get the robot_description parameter well?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/rotation_error.html">Rotation Error Computing</a></li>
@@ -202,13 +207,13 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="denso-robot-trajectory-controller-development">
+          <section id="denso-robot-trajectory-controller-development">
 <h1>Denso Robot Trajectory Controller Development<a class="headerlink" href="#denso-robot-trajectory-controller-development" title="Permalink to this heading">#</a></h1>
-<div class="section" id="virtual-forward-dynamics">
+<section id="virtual-forward-dynamics">
 <h2>Virtual Forward Dynamics<a class="headerlink" href="#virtual-forward-dynamics" title="Permalink to this heading">#</a></h2>
 <p>First of all, I decide to use a virtual forward dynamics for solve inverse kinematics probelm.</p>
 <p>By the <a class="reference external" href="https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers">stefanscherzinger</a></p>
-<div class="section" id="first-problem">
+<section id="first-problem">
 <h3>First Problem<a class="headerlink" href="#first-problem" title="Permalink to this heading">#</a></h3>
 <p>The first problem when I used this package is that it cannot find the parameter well.
 Such as: <em>robot_description</em>, and other controller needed parameters.</p>
@@ -220,31 +225,31 @@ Such as: <em>robot_description</em>, and other controller needed parameters.</p>
 <p class="admonition-title">Note</p>
 <p>This is for uncontroller package. If the ROS controller is used here, the parameter can be loaded directly in the controller spawn node which usually combined with the urdf file loaded.</p>
 </div>
-</div>
-<div class="section" id="second-problem">
+</section>
+<section id="second-problem">
 <h3>Second Problem<a class="headerlink" href="#second-problem" title="Permalink to this heading">#</a></h3>
 <p>The other parameter also cannot be found.</p>
 <p>Does the parameter not be loaded correctly in this controller?</p>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h3>12-16<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>I can use the cartesian motion controller in this package.</p>
-</div>
-</div>
-<div class="section" id="admittance-controller-in-ros2-controllers">
+</section>
+</section>
+<section id="admittance-controller-in-ros2-controllers">
 <h2>Admittance Controller in ROS2 controllers<a class="headerlink" href="#admittance-controller-in-ros2-controllers" title="Permalink to this heading">#</a></h2>
 <p>There is an official admittance controller in ROS2 controllers.
 Maybe I can use this controller first to fammiliar with the ros2 controller.
 Then write a customized controller by myself.</p>
 <p>There are some function in this controller that seems interesting.</p>
-<div class="section" id="realtime-command">
+<section id="realtime-command">
 <h3>Realtime command<a class="headerlink" href="#realtime-command" title="Permalink to this heading">#</a></h3>
 <p>It declares a subscriber to update the realtime command variable. And use this variable in the update function.
 It will ganranttee the performace of the command generated in a certain loop rate and not depend on the user send frequency.</p>
 <p><a class="reference internal" href="../notes/real_time_pub_sub.html#realtime-pub-sub"><span class="std std-ref">Realtime pub and sub in ROS2 by C++</span></a></p>
-</div>
-</div>
-<div class="section" id="custom-controller">
+</section>
+</section>
+<section id="custom-controller">
 <h2>Custom Controller<a class="headerlink" href="#custom-controller" title="Permalink to this heading">#</a></h2>
 <p>Do I need to write a customized controller?</p>
 <p>The current controller in ROS2 controllers cannot work well.
@@ -284,8 +289,8 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="custom-ik-solver">
+</section>
+<section id="custom-ik-solver">
 <h2>Custom IK Solver<a class="headerlink" href="#custom-ik-solver" title="Permalink to this heading">#</a></h2>
 <p>The moveit2 servoing is based on the IK solver from moveit2. So I can write a custome IK solver to combine it.</p>
 <p>Progress:</p>
@@ -294,11 +299,31 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <li><p>Config the moveit2. And try to use the moveit2 in the Gazebo.</p>
 <p>It is referenced by <a class="reference external" href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/main/ur_moveit_config">UR moveit config</a></p>
 </li>
-<li><p>Config the moveit2 servoing.</p></li>
-<li><p>Develop the custom IK solver.</p></li>
-</ol>
+<li><p>Config the moveit2 servoing.</p>
+<p>Servoing works! The main problem is that the header.stamp should be setted as the current ros time; So publisher cli dosen’t work here.</p>
+</li>
+<li><p>Develop the custom IK solver.</p>
+<p>Try to develop the custom IK solver, try to reference the official IK solver in moveit2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>In servoing, the kinematics config xml should as a parameter in the servoing node. Then the kinematics solver can be loaded in the servoing node.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Add the Stefan’s inverse kinematics</p></li>
+<li><p>Add the Impedance Controller in this IK solver</p></li>
+</ul>
 </div>
-<div class="section" id="todo">
+</li>
+</ol>
+<section id="the-problem-of-the-ik-solver">
+<h3>The problem of the IK solver<a class="headerlink" href="#the-problem-of-the-ik-solver" title="Permalink to this heading">#</a></h3>
+<p>It is a solver, not run in the realtime loop. So it is not suitable for the compliant control if used directly.
+I can design a custom servoing node to use this IK solver. And the servoing node can be used in the realtime loop.</p>
+<p>There is a pose tracking funciton in the servo. Maybe I can try to use it.</p>
+</section>
+</section>
+<section id="todo">
 <h2>TODO:<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Try to use the admittance controller in ROS2 controllers.</p></li>
@@ -311,20 +336,20 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 <p>【不过还是要多写写英语，不然会忘的太快了。】 &lt;- 卧槽 这一句是AI给我写出来的。。我谢谢它了。。。
 好吧 既然AI给我写了 那我还是继续练练英语好了 虽然一堆语法错误 哈哈</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../notes/index.html">
+          <a class="next-page" href="../2023_01/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Some notes</div>
+                <div class="title">Logs in 2023-01</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -381,7 +406,10 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
 </ul>
 </li>
 <li><a class="reference internal" href="#custom-controller">Custom Controller</a></li>
-<li><a class="reference internal" href="#custom-ik-solver">Custom IK Solver</a></li>
+<li><a class="reference internal" href="#custom-ik-solver">Custom IK Solver</a><ul>
+<li><a class="reference internal" href="#the-problem-of-the-ik-solver">The problem of the IK solver</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#todo">TODO:</a></li>
 </ul>
 </li>
@@ -395,9 +423,6 @@ In Stefan’s package, the impedance parameter is setted by ROS2 parameter syste
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>

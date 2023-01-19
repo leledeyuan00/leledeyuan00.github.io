@@ -2,10 +2,11 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Rotation Error Computing" href="rotation_error.html" /><link rel="prev" title="How to get the robot_description parameter well?" href="robot_description.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Rotation Error Computing" href="rotation_error.html" /><link rel="prev" title="How to get the robot_description parameter well?" href="robot_description.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>ROS2 realtime pub and sub - Dayuan Logs 0.1 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
+        <title>ROS2 realtime pub and sub - Dayuan Logs documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -122,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Dayuan Logs 0.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Dayuan Logs  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Dayuan Logs 0.1 documentation</span>
+  <span class="sidebar-brand-text">Dayuan Logs  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -159,9 +160,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../2022_12/Trajectory_controller.html">Denso Robot Trajectory Controller Development</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023_01/index.html">Logs in 2023-01</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023_01/Vision.html">Robot Vision for Garment Manipulation</a></li>
+</ul>
+</li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Some notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Some notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="robot_description.html">How to get the robot_description parameter well?</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">ROS2 realtime pub and sub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rotation_error.html">Rotation Error Computing</a></li>
@@ -202,82 +207,82 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="ros2-realtime-pub-and-sub">
+          <section id="ros2-realtime-pub-and-sub">
 <span id="realtime-pub-sub"></span><h1>ROS2 realtime pub and sub<a class="headerlink" href="#ros2-realtime-pub-and-sub" title="Permalink to this heading">#</a></h1>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">XXX::on_configure</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="cm">/* Some other configuration */</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">XXX::on_configure</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*previous_state*/</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Some other configuration */</span>
 <span class="w">    </span><span class="c1">// setup subscribers and publishers</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">joint_command_callback</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">        </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">trajectory_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">JointTrajectoryPoint</span><span class="o">&gt;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">input_joint_command_</span><span class="p">.</span><span class="n">writeFromNonRT</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="n">input_joint_command_subscriber_</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">        </span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">trajectory_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">JointTrajectoryPoint</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="s">&quot;~/joint_references&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SystemDefaultsQoS</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_command_callback</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">s_publisher_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">XXXmsg</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="s">&quot;~/status&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SystemDefaultsQoS</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_publisher_</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">realtime_tools</span><span class="o">::</span><span class="n">RealtimePublisher</span><span class="o">&lt;</span><span class="n">ControllerStateMsg</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s_publisher_</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">joint_command_callback</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">trajectory_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">JointTrajectoryPoint</span><span class="o">&gt;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">input_joint_command_</span><span class="p">.</span><span class="n">writeFromNonRT</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="n">input_joint_command_subscriber_</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">trajectory_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">JointTrajectoryPoint</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;~/joint_references&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SystemDefaultsQoS</span><span class="p">(),</span><span class="w"> </span><span class="n">joint_command_callback</span><span class="p">);</span>
+<span class="w">    </span><span class="n">s_publisher_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_node</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">create_publisher</span><span class="o">&lt;</span><span class="n">control_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">XXXmsg</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;~/status&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SystemDefaultsQoS</span><span class="p">());</span>
+<span class="w">    </span><span class="n">state_publisher_</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">realtime_tools</span><span class="o">::</span><span class="n">RealtimePublisher</span><span class="o">&lt;</span><span class="n">ControllerStateMsg</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">s_publisher_</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="nf">XXX::update_reference_from_subscribers</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="nf">XXX::update_reference_from_subscribers</span><span class="p">()</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="c1">// update input reference from ros subscriber message</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">admittance_</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">admittance_</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">joint_command_msg_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input_joint_command_</span><span class="p">.</span><span class="n">readFromRT</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">joint_command_msg_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">input_joint_command_</span><span class="p">.</span><span class="n">readFromRT</span><span class="p">();</span>
 
 <span class="w">    </span><span class="c1">// if message exists, load values into references</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">joint_command_msg_</span><span class="p">.</span><span class="n">get</span><span class="p">())</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">positions</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">position_reference_</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">velocities</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">velocity_reference_</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">joint_command_msg_</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">positions</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="n">position_reference_</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">velocities</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="n">velocity_reference_</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">joint_command_msg_</span><span class="o">-&gt;</span><span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="nf">XXX::update_and_write_commands</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*time*/</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Duration</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">period</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="w"> </span><span class="nf">XXX::update_and_write_commands</span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Time</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="cm">/*time*/</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Duration</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">period</span><span class="p">)</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="c1">// Realtime constraints are required in this function</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">admittance_</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">admittance_</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">ERROR</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// update input reference from chainable interfaces</span>
-<span class="w">    </span><span class="n">read_state_reference_interfaces</span><span class="p">(</span><span class="n">reference_</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">read_state_reference_interfaces</span><span class="p">(</span><span class="n">reference_</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// get all controller inputs</span>
-<span class="w">    </span><span class="n">read_state_from_hardware</span><span class="p">(</span><span class="n">joint_state_</span><span class="p">,</span><span class="w"> </span><span class="n">ft_values_</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">read_state_from_hardware</span><span class="p">(</span><span class="n">joint_state_</span><span class="p">,</span><span class="w"> </span><span class="n">ft_values_</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// apply admittance control to reference to determine desired state</span>
-<span class="w">    </span><span class="n">admittance_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">joint_state_</span><span class="p">,</span><span class="w"> </span><span class="n">ft_values_</span><span class="p">,</span><span class="w"> </span><span class="n">reference_</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="n">reference_admittance_</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">admittance_</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">joint_state_</span><span class="p">,</span><span class="w"> </span><span class="n">ft_values_</span><span class="p">,</span><span class="w"> </span><span class="n">reference_</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="n">reference_admittance_</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// write calculated values to joint interfaces</span>
-<span class="w">    </span><span class="n">write_state_to_hardware</span><span class="p">(</span><span class="n">reference_admittance_</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">write_state_to_hardware</span><span class="p">(</span><span class="n">reference_admittance_</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Publish controller state</span>
-<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">msg_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">admittance_</span><span class="o">-&gt;</span><span class="n">get_controller_state</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">unlockAndPublish</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">lock</span><span class="p">();</span>
+<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">msg_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">admittance_</span><span class="o">-&gt;</span><span class="n">get_controller_state</span><span class="p">();</span>
+<span class="w">    </span><span class="n">state_publisher_</span><span class="o">-&gt;</span><span class="n">unlockAndPublish</span><span class="p">();</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">return_type</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
         </article>
       </div>
@@ -329,9 +334,6 @@
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>

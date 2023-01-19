@@ -14,6 +14,7 @@ LOGs
    :maxdepth: 2
 
    2022_12/index
+   2023_01/index
 
 
 Notes
