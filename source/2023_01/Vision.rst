@@ -69,12 +69,13 @@ Reference a blog
     When I install the library, and upgrade the system, the system will sufferring a weird problem. It offen stuck when I open something even folders, websites or terminal. 
     It is dangerours for control robots, so I will reinstall the system then try to use the docker to run this library.
 
-    
-
-
-
 Config the dev rule
 ^^^^^^^^^^^^^^^^^^^
 
     sudo cp config/99-k4a.rules /etc/udev/rules.d/
     sudo udevadm control --reload-rules && udevadm trigger
+
+The ROS2 Package
+^^^^^^^^^^^^^^^^
+
+In ROS2 package, the default mode of 3d is **WFOV_UNBINNED**. The fast frequency of this mode is 15Hz. So I change the mode to **NFOV_UNBINNED**.
