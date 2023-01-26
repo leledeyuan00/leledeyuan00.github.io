@@ -215,6 +215,63 @@
 <p>The first thing to do is to calibrate the camera with robot frame. And also to calibrate two robots each other with base frame.</p>
 <p>This can be done by using the moveit calibration plugin.</p>
 </section>
+<section id="azure-kinetic-camera">
+<h2>Azure Kinetic camera<a class="headerlink" href="#azure-kinetic-camera" title="Permalink to this heading">#</a></h2>
+<section id="setup-environment">
+<h3>Setup Environment<a class="headerlink" href="#setup-environment" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/microsoft/Azure_Kinect_ROS_Driver/tree/humble">Github Official Repository</a></p>
+</section>
+<section id="build-the-sdk">
+<h3>Build the SDK<a class="headerlink" href="#build-the-sdk" title="Permalink to this heading">#</a></h3>
+<p>Clone the SDK from github</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/microsoft/Azure-Kinect-Sensor-SDK.git
+</pre></div>
+</div>
+<p>Build the Docker file for Ubuntu</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Azure-Kinect-Sensor-SDK/scripts/docker
+chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>setup_ubuntu.sh
+docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w"> </span>azure_build_env<span class="w"> </span>--file<span class="w"> </span>./Dockerfile<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Using the Docker Env to complile the library</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>container<span class="w"> </span>run<span class="w"> </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/home/dayuan/Documents/package/Azure-Kinect-Sensor-SDK,target<span class="o">=</span>/home/Azure/<span class="w"> </span>-it<span class="w"> </span>azure_build_env
+</pre></div>
+</div>
+</section>
+<section id="reference-a-blog">
+<h3>Reference a blog<a class="headerlink" href="#reference-a-blog" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://blog.csdn.net/OTZ_2333/article/details/124025953">CSDN using dpkg install</a></p>
+<ol class="arabic">
+<li><p>From official mirror <a class="reference external" href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/k/k4a-tools/">k4a-tools</a> . Download latest k4a-tools.</p></li>
+<li><p>From official mirror <a class="reference external" href="https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/">k4a</a> . Download latest libk4a and libk4a-dev.</p></li>
+<li><p>The library depends on <strong>libsoundio1</strong>, it is only on the Ubuntu 20.04. Temporary set the mirror to 20.04, then install</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libsoundio1
+</pre></div>
+</div>
+</li>
+<li><p>Install the k4a-tools and libk4a</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>k4a-tools_1.4.1_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>libk4a1.4_1.4.1_amd64.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>libk4a1.4-dev_1.4.1_amd64.deb
+</pre></div>
+</div>
+</li>
+<li><p>Change back to 22.04 mirror.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When I install the library, and upgrade the system, the system will sufferring a weird problem. It offen stuck when I open something even folders, websites or terminal.
+It is dangerours for control robots, so I will reinstall the system then try to use the docker to run this library.</p>
+</div>
+</section>
+<section id="config-the-dev-rule">
+<h3>Config the dev rule<a class="headerlink" href="#config-the-dev-rule" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>sudo cp config/99-k4a.rules /etc/udev/rules.d/
+sudo udevadm control –reload-rules &amp;&amp; udevadm trigger</p>
+</div></blockquote>
+</section>
+</section>
 </section>
 
         </article>
@@ -274,6 +331,13 @@
             <ul>
 <li><a class="reference internal" href="#">Robot Vision for Garment Manipulation</a><ul>
 <li><a class="reference internal" href="#calibration">Calibration</a></li>
+<li><a class="reference internal" href="#azure-kinetic-camera">Azure Kinetic camera</a><ul>
+<li><a class="reference internal" href="#setup-environment">Setup Environment</a></li>
+<li><a class="reference internal" href="#build-the-sdk">Build the SDK</a></li>
+<li><a class="reference internal" href="#reference-a-blog">Reference a blog</a></li>
+<li><a class="reference internal" href="#config-the-dev-rule">Config the dev rule</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
