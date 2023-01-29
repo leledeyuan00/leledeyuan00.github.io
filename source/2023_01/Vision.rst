@@ -69,6 +69,17 @@ Reference a blog
     When I install the library, and upgrade the system, the system will sufferring a weird problem. It offen stuck when I open something even folders, websites or terminal. 
     It is dangerours for control robots, so I will reinstall the system then try to use the docker to run this library.
 
+.. note::
+
+    The reason of stuck if not attribute to the library. It is because the Nvidia Driver update. When I remove the Nvidia Driver, the system is normal.
+
+.. warning:: 
+
+    The log of Nvidia upgrade is:
+    `Unpacking libnvidia-common-525 (525.78.01-0ubuntu0.22.04.1) over (525.60.11-0ubuntu0.22.04.1) ...`
+
+    So the 525.78.01 is not compatible with 22.04. I will try to install the 525.60.11.
+
 Config the dev rule
 ^^^^^^^^^^^^^^^^^^^
 
