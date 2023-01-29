@@ -172,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../notes/real_time_pub_sub.html">ROS2 realtime pub and sub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/rotation_error.html">Rotation Error Computing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notes/kinematics_interface.html">Kinematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notes/useful_linux_commands.html">Some Useful Linux Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -262,6 +263,16 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 <p class="admonition-title">Warning</p>
 <p>When I install the library, and upgrade the system, the system will sufferring a weird problem. It offen stuck when I open something even folders, websites or terminal.
 It is dangerours for control robots, so I will reinstall the system then try to use the docker to run this library.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason of stuck if not attribute to the library. It is because the Nvidia Driver update. When I remove the Nvidia Driver, the system is normal.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The log of Nvidia upgrade is:
+<cite>Unpacking libnvidia-common-525 (525.78.01-0ubuntu0.22.04.1) over (525.60.11-0ubuntu0.22.04.1) …</cite></p>
+<p>So the 525.78.01 is not compatible with 22.04. I will try to install the 525.60.11.</p>
 </div>
 </section>
 <section id="config-the-dev-rule">
