@@ -18,9 +18,6 @@ Setup Environment
 
 `Github Official Repository <https://github.com/microsoft/Azure_Kinect_ROS_Driver/tree/humble>`_
 
-Build the SDK
-^^^^^^^^^^^^^
-
 Clone the SDK from github
 
 .. code-block:: bash
@@ -41,47 +38,34 @@ Using the Docker Env to complile the library
 
     docker container run --mount type=bind,source=/home/dayuan/Documents/package/Azure-Kinect-Sensor-SDK,target=/home/Azure/ -it azure_build_env
 
+.. warning:: 
+
+    This way is deprecated.
+
+
 
 Reference a blog
 ^^^^^^^^^^^^^^^^
 
 `CSDN using dpkg install <https://blog.csdn.net/OTZ_2333/article/details/124025953>`_
 
-1. From official mirror `k4a-tools <https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/k/k4a-tools/>`_ . Download latest k4a-tools.
-2. From official mirror `k4a <https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/>`_ . Download latest libk4a and libk4a-dev.
-3. The library depends on **libsoundio1**, it is only on the Ubuntu 20.04. Temporary set the mirror to 20.04, then install 
-   
-   .. code-block:: bash
-        
-        sudo apt-get install libsoundio1
-4. Install the k4a-tools and libk4a
+1. From official mirror `k4a <https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/>`_ . Download latest libk4a and libk4a-dev.
+2. Install the libk4a
 
-   .. code-block:: bash
+.. code-block:: bash
 
-        sudo dpkg -i k4a-tools_1.4.1_amd64.deb
-        sudo dpkg -i libk4a1.4_1.4.1_amd64.deb
-        sudo dpkg -i libk4a1.4-dev_1.4.1_amd64.deb
+     sudo dpkg -i libk4a1.4_1.4.1_amd64.deb
+     sudo dpkg -i libk4a1.4-dev_1.4.1_amd64.deb
 
-5. Change back to 22.04 mirror.
+.. note:: 
 
-.. warning::
-
-    When I install the library, and upgrade the system, the system will sufferring a weird problem. It offen stuck when I open something even folders, websites or terminal. 
-    It is dangerours for control robots, so I will reinstall the system then try to use the docker to run this library.
-
-.. note::
-
-    The reason of stuck if not attribute to the library. It is because the Nvidia Driver update. When I remove the Nvidia Driver, the system is normal.
-
-.. warning:: 
-
-    The log of Nvidia upgrade is:
-    `Unpacking libnvidia-common-525 (525.78.01-0ubuntu0.22.04.1) over (525.60.11-0ubuntu0.22.04.1) ...`
-
-    So the 525.78.01 is not compatible with 22.04. I will try to install the 525.60.11.
+    I use the ROS2 to control the camera. So I don't need to install k4a-tools. This tool needs a library called libsounds1 which is not available in Ubuntu 22.04. I must change the mirror to the 20.04 temporarily.
+    It is dangerous.
 
 Config the dev rule
 ^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
 
     sudo cp config/99-k4a.rules /etc/udev/rules.d/
     sudo udevadm control --reload-rules && udevadm trigger
@@ -89,4 +73,19 @@ Config the dev rule
 The ROS2 Package
 ^^^^^^^^^^^^^^^^
 
+clone the package from github: `Azure_Kinect_ROS_Driver <https://github.com/microsoft/Azure_Kinect_ROS_Driver.git>`_
+
+.. code-block:: bash
+
+    git clone https://github.com/microsoft/Azure_Kinect_ROS_Driver.git
+
+.. code-block:: bash
+
+    git checkout humble
+
+
 In ROS2 package, the default mode of 3d is **WFOV_UNBINNED**. The fast frequency of this mode is 15Hz. So I change the mode to **NFOV_UNBINNED**.
+
+For using this image topic, I need to change the qos of the subscription to the ReliabilityPolicy::RELIABLE. The default is best effort, I don't know why it is very bad in this mode.
+
+This might be the problem in its ros2 pacakge. Maybe I can fix it latter.
