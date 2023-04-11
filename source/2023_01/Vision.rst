@@ -16,7 +16,7 @@ Azure Kinetic camera
 Setup Environment
 ^^^^^^^^^^^^^^^^^
 
-`Github Official Repository <https://github.com/microsoft/Azure_Kinect_ROS_Driver/tree/humble>`_
+`Github Official Repository <https://github.com/microsoft/Azure-Kinect-Sensor-SDK>`_
 
 Clone the SDK from github
 
