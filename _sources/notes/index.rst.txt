@@ -8,3 +8,4 @@ Some notes
     kinematics_interface
     useful_linux_commands
     docker.rst
+    kazam_in_4k.rst

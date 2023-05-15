@@ -58,7 +58,7 @@ Enable Usb in Docker
 
     $ apt-get update && apt-get install libusb-1.0-0-dev libudev-dev usbutils udev && /lib/systemd/systemd-udevd --daemon
 
-Link /lib/udev/hwb.d/*.hwbd to the Docker.
+Link `/lib/udev/hwb.d/*.hwbd` to the Docker.
         
 
 Compile the Package
