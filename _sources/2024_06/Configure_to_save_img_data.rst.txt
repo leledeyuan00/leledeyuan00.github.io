@@ -30,7 +30,7 @@ Configure the camera ros packages
 
 .. code-block:: bash
 
-    $ roslaunch realsense2_camera rs_camera.launch
+    $ ros2 launch realsense2_camera rs_camera.launch
 
 You can check the camera image data as topics in the terminal.
 
